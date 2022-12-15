@@ -1,8 +1,8 @@
 {
-  "name": "smoothscroll",
-  "version": "1.0.0",
+  "name": "smoosh-scroll",
+  "version": "0.0.1",
   "description": "",
-  "keywords": [],
+  "keywords": ["smoothscroll", "smooth", "scroll", "native", "no scroll-jacking"],
   "main": "src/index.js",
   "dependencies": {
     "@react-hook/size": "2.1.2",
