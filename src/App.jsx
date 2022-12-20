@@ -1,10 +1,11 @@
 import React from "react";
 import { useSmooshScroll } from "../lib/react";
-import { Spring } from "../lib/spring";
+import { Transition } from "../lib/transition";
+import { spring } from "../lib/transitions/spring";
 import "./styles.css";
 
 export default function App() {
-  useSmooshScroll(() => new Spring({ stiffness: 500, friction: 0.3, mass: 3 }))
+  useSmooshScroll(() => new Transition(spring))
 
   return (
     <div className="App">
