@@ -1,9 +1,10 @@
 import React from "react";
-import { useSmoothScroll } from "./useSmoothScroll";
+import { useSmooshScroll } from "../lib/react";
+import { Spring } from "../lib/spring";
 import "./styles.css";
 
 export default function App() {
-  useSmoothScroll({ stiffness: 500, friction: 0.3, mass: 3 })
+  useSmooshScroll(() => new Spring({ stiffness: 500, friction: 0.3, mass: 3 }))
 
   return (
     <div className="App">
