@@ -1,7 +1,7 @@
 # Smoosh Scroll
 ```yarn install smoosh-scroll```
 
-2kb unminified, 389 bytes minified + gzipped
+2kb unminified, 839 bytes minified + gzipped
 
 ## Usage without react
 ```js
