@@ -1,12 +1,21 @@
 # Smoosh Scroll
 ```yarn install smoosh-scroll```
 
-2kb unminified, 839 bytes minified + gzipped
+2.57kb unminified, 910 bytes minified + gzipped
 
 ## Usage without react
 ```js
 import { SmooshScroll, Transition, spring } from 'smoosh-scroll'
 
+const cleanup = new SmooshScroll({
+  target: someElement,
+  transition: new Transition(spring)
+})
+```
+
+Omitting the target, it defaults to using `document.scrollingElement`, making the entire document scroll smoothly.
+
+```js
 const cleanup = new SmooshScroll({
   transition: new Transition(spring)
 })
@@ -14,9 +23,23 @@ const cleanup = new SmooshScroll({
 
 ## Usage with react
 ```js
-import { useSmooshScroll, Transition, spring } from 'smoosh-scroll'
+import { useSmooshScrollDocument, Transition, spring } from 'smoosh-scroll'
 
-useSmooshScroll(() => new Transition(spring))
+useSmooshScrollDocument(() => new Transition(spring))
+```
+
+To make an element scroll smoothly, use `useSmooshScroll` and provide the returned `ref` to an element:
+
+```js
+import { useSmooshScrollDocument, Transition, spring } from 'smoosh-scroll'
+
+const smooshRef = useSmooshScroll(() => new Transition(spring))
+
+return (
+  <div ref={smooshRef}>
+    {/* Content */}
+  </div>
+)
 ```
 
 ### Included transitions
@@ -36,5 +59,4 @@ const averageTransition = new Transition(average, { weight: 10 })
 Smoosh Scroll animates the scroll position. Everything just works :)
 
 ## Roadmap
-- Targets other than `document.scrollingElement`
 - Horizontal scrolling
